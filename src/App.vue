@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.vue'
 import Socials from './components/Socials.vue'
 
 export default {
-    name: 'GameModeButton',
+    name: 'App',
     components: {
       NavBar,Socials
     },
@@ -25,20 +25,26 @@ export default {
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
       <NavBar/>
-      <Socials/>
+      <Socials size="md"/>
   </header>
 
   <RouterView />
+  <footer>
+    <span class="minititle">Follow us on:</span>
+    <Socials size="3x"/>
+  </footer>
 </template>
 
 <style scoped>
-
-
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
 }
 
+footer{
+  width: 30%;
+  padding: 10px;
+}
 
 </style>

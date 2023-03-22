@@ -5,7 +5,7 @@ import LastNews from '../components/LastNews.vue'
 
 <template>
   <main>
-    <Welcome/>
+    <Welcome id="welcome"/>
     <div class="container">
       <LastNews/>
 
@@ -13,7 +13,10 @@ import LastNews from '../components/LastNews.vue'
   </main>
 </template>
 <style scoped>
-  main{
+main{
+  width: 100%;
+}
+  #welcome{
     height: 95vh;
   }
   .container{

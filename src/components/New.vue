@@ -41,6 +41,7 @@
     display: block;
     width: 100%;
     height: 100%;
+    font-weight: bold;
     text-align: center;
     transition: all .3s;
     background-color: transparent;

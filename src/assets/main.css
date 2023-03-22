@@ -37,15 +37,34 @@ a,
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
+#app{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+}
 .title{
   font-size: 54px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
 }
 .subtitle{
-  font-size: 36px ;
+  font-size: 32px ;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 .minititle{
-  font-size: 21px;
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 
 .btn{
@@ -55,7 +74,7 @@ a,
   padding: 10px 50px;
   cursor: pointer;
   transition: all .3s;
-
+  display: block;
 }
 
 .btn:hover{

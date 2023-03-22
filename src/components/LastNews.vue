@@ -4,7 +4,7 @@ import New from './New.vue'
 
 <template>
   <div id="last-news">
-    <span class="title">Last news</span>
+    <span class="subtitle">Last news</span>
     <div class="grid">
       <New/>
       <New/>
