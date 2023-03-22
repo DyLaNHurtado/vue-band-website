@@ -15,7 +15,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     height: 100%;
-    background-color: gray;
+    background-color: black;
   }
   img{
     width: 200px;

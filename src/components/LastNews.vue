@@ -10,18 +10,22 @@ import New from './New.vue'
       <New/>
       <New/>
       <New/>
+      <New/>
+      <New/>
     </div>
+    <button class="btn">See more</button>
   </div>
 
 </template>
 <style scoped>
-  #news{
+  #last-news{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
     background-color: black;
+    padding: 20px 0;
   }
   img{
     width: 200px;
@@ -30,6 +34,9 @@ import New from './New.vue'
   .grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    place-content: center;
+    gap: 2rem;
+  }
+  .btn{
+    margin: 2rem;
   }
 </style>

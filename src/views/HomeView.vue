@@ -14,7 +14,7 @@ import LastNews from '../components/LastNews.vue'
 </template>
 <style scoped>
   main{
-    height: 85vh;
+    height: 95vh;
   }
   .container{
     padding: 0 20vw;
