@@ -9,7 +9,6 @@
     </div>
     <div class="data">
         <span class="minititle">sdffssdfsfdsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdfsdf</span>
-        <font-awesome-icon icon="fa-solid fa-user-secret" />
     </div>
   </div>
 

@@ -1,11 +1,12 @@
 <script>
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
+import Socials from './components/Socials.vue'
 
 export default {
     name: 'GameModeButton',
     components: {
-      NavBar
+      NavBar,Socials
     },
     data(){
       return{
@@ -24,7 +25,7 @@ export default {
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
       <NavBar/>
-      <div>socialsS</div>
+      <Socials/>
   </header>
 
   <RouterView />

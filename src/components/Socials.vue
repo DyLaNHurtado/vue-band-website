@@ -3,21 +3,18 @@
 
 <template>
   <div class="socials">
-    <span class="title">Last news</span>
-    <div class="grid">
-      <New/>
-      <New/>
-      <New/>
-      <New/>
-      <New/>
-      <New/>
-    </div>
-    <button class="btn">See more</button>
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+    <font-awesome-icon :icon="['fab', 'instagram']" />
+    
   </div>
 
 </template>
 <style scoped>
     .socials{
-        
+        background-color: red;
     }
 </style>
