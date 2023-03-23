@@ -34,7 +34,7 @@ import New from './New.vue'
   .grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: .3rem;
   }
   .btn{
     margin: 2rem;

@@ -15,9 +15,9 @@ const router = createRouter({
       component: () => import('../views/BandView.vue')
     },
     {
-      path: '/tour',
-      name: 'tour',
-      component: () => import('../views/TourView.vue')
+      path: '/gallery',
+      name: 'gallery',
+      component: () => import('../views/GalleryView.vue')
     },
     {
       path: '/music',
@@ -25,14 +25,9 @@ const router = createRouter({
       component: () => import('../views/MusicView.vue')
     },
     {
-      path: '/gallery',
-      name: 'gallery',
-      component: () => import('../views/GalleryView.vue')
-    },
-    {
-      path: '/epk',
-      name: 'epk',
-      component: () => import('../views/EPKView.vue')
+      path: '/tours',
+      name: 'tours',
+      component: () => import('../views/ToursView.vue')
     },
     {
       path: '/contact',

@@ -1,16 +1,78 @@
 <template>
   <div class="contact">
-    <h1>This is an Contact page</h1>
+    <h1 class="title">Contact</h1>
+    <form>
+      <input type="text" placeholder="Name" required/>
+      <input type="text" placeholder="Email" required/>
+      <input type="text" placeholder="Phone" />
+      <textarea placeholder="Write your message...">sdfsdf</textarea>
+      <button class="btn">Send</button>
+    </form>
+
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
+
   .contact {
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    padding-top: 5rem;
   }
-}
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-top: 25px;
+    padding: 50px 30px;
+    background-color: #56565656;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+
+  .btn{
+    width: 100%;
+    font-size: 16px;
+  }
+  textarea{
+    resize: none;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 200px;
+    margin: 20px;
+    overflow-y: auto;
+    border: 2px solid #4f4f4f;
+    box-shadow: none;
+    background-color: #4f4f4f56;
+    padding: 10px;
+    color:white;
+    font-size: 16px;
+  }
+
+  textarea:focus,input:focus{
+    outline:1px solid #f4f4f4cc;
+  }
+
+  input{
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    margin: 20px;
+    border: 2px solid #4f4f4f;
+    box-shadow: none;
+    background-color: #4f4f4f56;
+    padding: 10px;
+    color:white;
+    font-size: 16px;
+  }
 </style>

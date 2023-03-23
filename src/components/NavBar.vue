@@ -6,10 +6,8 @@
     <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/band">The Band</RouterLink>
-        <RouterLink to="/tour">Tour</RouterLink>
-        <RouterLink to="/music">Music / Videos</RouterLink>
+        <RouterLink to="/music">Music</RouterLink>
         <RouterLink to="/gallery">Gallery</RouterLink>
-        <RouterLink to="/epk">EPK</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
     </nav>
 </template>
