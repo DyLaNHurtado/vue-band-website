@@ -49,6 +49,7 @@
     filter: grayscale(100);
     transition: all .5s;
     cursor: pointer;
+    width: 100%;
     background-color: aquamarine;
   }
 
@@ -60,7 +61,7 @@
   .photos{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: .3rem;
   }
 </style>

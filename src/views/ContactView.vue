@@ -62,6 +62,9 @@
   textarea:focus,input:focus{
     outline:1px solid #f4f4f4cc;
   }
+  textarea:hover,input:hover{
+    background-color: #4f4f4f;
+  }
 
   input{
     max-width: 100%;
