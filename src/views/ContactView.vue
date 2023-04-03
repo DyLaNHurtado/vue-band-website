@@ -78,4 +78,9 @@
     color:white;
     font-size: 16px;
   }
+  @media only screen and (max-width: 900px) {
+  form {
+    min-width: 100%;
+  }
+  }
 </style>

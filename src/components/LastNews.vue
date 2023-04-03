@@ -39,4 +39,14 @@ import New from './New.vue'
   .btn{
     margin: 2rem;
   }
+  @media only screen and (max-width: 1300px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  }
+  @media only screen and (max-width: 850px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  }
 </style>
