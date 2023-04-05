@@ -13,7 +13,6 @@ import New from './New.vue'
       <New/>
       <New/>
     </div>
-    <button class="btn">See more</button>
   </div>
 
 </template>
@@ -21,7 +20,7 @@ import New from './New.vue'
   #last-news{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
     height: 100%;
     background-color: black;
@@ -34,10 +33,7 @@ import New from './New.vue'
   .grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: .3rem;
-  }
-  .btn{
-    margin: 2rem;
+    gap: 3rem;
   }
   @media only screen and (max-width: 1300px) {
   .grid {
