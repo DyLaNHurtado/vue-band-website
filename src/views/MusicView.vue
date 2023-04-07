@@ -2,7 +2,40 @@
 export default {
     name: 'MusicView',
     data(){
-      return{}
+      return{
+        songList:[
+          {
+            title:"Seek And Destroy",
+            author:"Metallica",
+            img:"src/assets/videos/SeekAndDestroyMetallica.gif",
+          },
+          {
+            title:"Heaven's On Fire",
+            author:"KISS",
+            img:"src/assets/videos/HeavenOnFireKISS.gif",
+          },
+          {
+            title:"Can't Stop",
+            author:"Red Hot Chili Peppers",
+            img:"src/assets/videos/CantStopRHCP.gif",
+          },
+          {
+            title:"Sweating Bullets",
+            author:"Megadeth",
+            img:"src/assets/videos/SweatingBulletsMegadeth.gif",
+          },
+          {
+            title:"Holy Diver",
+            author:"DIO",
+            img:"src/assets/videos/HolyDiverDio.gif",
+          },
+          {
+            title:"Speed King",
+            author:"Deep Purple",
+            img:"src/assets/videos/SpeedKingDeepPurple.gif",
+          },
+        ]
+      }
     },
     methods: {
       controlVideo(event){
@@ -17,66 +50,32 @@ export default {
 </script>
 <template>
   <div class="music">
-    <h1>This is an music page</h1>
-
+    <h1 class="title">Musical repertoire</h1>
+    <h2 class="subtitle"> Our Covers </h2>
     <div class="repertorio">
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)">
-    <img src="../assets/videos/SeekAndDestroyMetallica.gif" class="image"  style="filter:grayscale(1)"  />
-    <div class="info">
-      <h3 class="minititle">Seek And Destroy</h3>
-      <p>Metallica</p>
-    </div>
+      <div class="card"  v-for="item in songList" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)">
+        <img :src="item.img" class="image"  style="filter:grayscale(1)"  />
+        <div class="info">
+          <h3 class="minititle">{{ item.title }}</h3>
+          <p>{{ item.author }}</p>
+        </div>
+      </div>
   </div>
-
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
-    <img src="../assets/videos/HeavenOnFireKISS.gif" class="image"  style="filter:grayscale(1)"  />
-    <div class="info">
-      <h3 class="minititle">Heaven's On Fire</h3>
-      <p>KISS</p>
-    </div>
-  </div>
-
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
-    <img src="../assets/videos/cantStopRHCP.gif" class="image" style="filter:grayscale(1)" />
-    <div class="info">
-      <h3 class="minititle">Can't stop</h3>
-      <p>Red Hot Chili Peppers</p>
-    </div>
-  </div>
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
-    <img src="../assets/videos/SweatingBulletsMegadeth.gif" class="image" style="filter:grayscale(1)" />
-    <div class="info">
-      <h3 class="minititle">Sweating Bullets</h3>
-      <p>Megadeth</p>
-    </div>
-  </div>
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
-    <img src="../assets/videos/HolyDiverDio.gif" class="image" style="filter:grayscale(1)" />
-    <div class="info">
-      <h3 class="minititle">Holy Diver</h3>
-      <p>DIO</p>
-    </div>
-  </div>
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
-    <img src="../assets/videos/SpeedKingDeepPurple.gif" class="image" style="filter:grayscale(1)" />
-    <div class="info">
-      <h3 class="minititle">Speed King</h3>
-      <p>Deep purple</p>
-    </div>
-  </div>
-
-</div>
+  <h2 class="subtitle">Our Own Songs</h2>
+  <span>Comming soon...</span>
   </div>
 </template>
 
 <style scoped>
 
   .music {
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    padding-top: 5rem;
   }
   .repertorio{
     display: flex;
@@ -85,6 +84,7 @@ export default {
     transition: all .3s;
   }
   .card{
+    transition: all .3s;
     display: flex;
     flex-direction: column;
     margin: 20px;
