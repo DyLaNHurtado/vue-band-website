@@ -7,32 +7,32 @@ export default {
           {
             title:"Seek And Destroy",
             author:"Metallica",
-            img:"src/assets/videos/SeekAndDestroyMetallica.gif",
+            img:"/videos/SeekAndDestroyMetallica.gif",
           },
           {
             title:"Heaven's On Fire",
             author:"KISS",
-            img:"src/assets/videos/HeavenOnFireKISS.gif",
+            img:"/videos/HeavenOnFireKISS.gif",
           },
           {
             title:"Can't Stop",
             author:"Red Hot Chili Peppers",
-            img:"src/assets/videos/CantStopRHCP.gif",
+            img:"/videos/CantStopRHCP.gif",
           },
           {
             title:"Sweating Bullets",
             author:"Megadeth",
-            img:"src/assets/videos/SweatingBulletsMegadeth.gif",
+            img:"/videos/SweatingBulletsMegadeth.gif",
           },
           {
             title:"Holy Diver",
             author:"DIO",
-            img:"src/assets/videos/HolyDiverDio.gif",
+            img:"/videos/HolyDiverDio.gif",
           },
           {
             title:"Speed King",
             author:"Deep Purple",
-            img:"src/assets/videos/SpeedKingDeepPurple.gif",
+            img:"/videos/SpeedKingDeepPurple.gif",
           },
         ]
       }

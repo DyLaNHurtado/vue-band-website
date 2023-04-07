@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .band {
     display: flex;
     align-items: center;
