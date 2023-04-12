@@ -47,7 +47,7 @@
   }
   img{
     filter: grayscale(100);
-    transition: all .5s;
+    transition: all .3s;
     cursor: pointer;
     width: 100%;
     background-color: aquamarine;
@@ -55,7 +55,6 @@
 
   img:hover{
     filter: grayscale(0);
-    scale: .95;
   }
 
   .photos{

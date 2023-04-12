@@ -6,6 +6,7 @@
         <h2 class="subtitle">Summary</h2>
         Active years: 2023 - Currently
         Origin: Madrid
+        
       </div>
     </div>
   </div>

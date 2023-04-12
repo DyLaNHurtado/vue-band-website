@@ -1,4 +1,5 @@
 <script>
+import Loader from '../components/Loader.vue'
 export default {
     name: 'MusicView',
     data(){
@@ -37,8 +38,11 @@ export default {
         ]
       }
     },
+    components: {
+      Loader
+    },
     methods: {
-      controlVideo(event){
+      doEffect(event){
         if(event.type ==="mouseenter"){
           event.target.childNodes[0].removeAttribute("style")
         }else{
@@ -53,8 +57,9 @@ export default {
     <h1 class="title">Musical repertoire</h1>
     <h2 class="subtitle"> Our Covers </h2>
     <div class="repertorio">
-      <div class="card"  v-for="item in songList" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)">
-        <img :src="item.img" class="image"  style="filter:grayscale(1)"  />
+      <div class="card"  v-for="item in songList" @mouseenter="doEffect($event)"  @mouseleave="doEffect($event)">
+        <Loader/>
+        <img :src="item.img" loading="lazy" class="image"  style="filter:grayscale(1)"  />
         <div class="info">
           <h3 class="minititle">{{ item.title }}</h3>
           <p>{{ item.author }}</p>

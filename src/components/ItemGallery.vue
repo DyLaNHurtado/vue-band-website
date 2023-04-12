@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'SongCard',
+    name: 'ItemGallery',
     props: {
         size:"xl"
     },
@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div class="card" @mouseenter="controlVideo($event)"  @mouseleave="controlVideo($event)" >
+  <div class="card">
     <img src="../assets/videos/SpeedKingDeepPurple.gif" class="image" style="filter:grayscale(1)" />
     <div class="info">
       <h3 class="minititle">Speed King</h3>

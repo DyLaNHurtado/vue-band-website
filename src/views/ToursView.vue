@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 @media (min-width: 1024px) {
   .tours {
     min-height: 100vh;
