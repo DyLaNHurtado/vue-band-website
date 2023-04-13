@@ -37,7 +37,7 @@ main{
   width: 100%;
 }
   #welcome{
-    height: 95vh;
+    height: 99vh;
   }
   .container{
     padding: 20px;

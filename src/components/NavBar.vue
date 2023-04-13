@@ -4,32 +4,39 @@
 
 <template>
     <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/band">The Band</RouterLink>
-        <RouterLink to="/music">Music</RouterLink>
-        <RouterLink to="/gallery">Gallery</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/"><font-awesome-icon class="icon" :icon="['fas', 'home']" :size="size"/>&nbsp;Home</RouterLink>
+        <RouterLink to="/band"><font-awesome-icon class="icon" :icon="['fas', 'rainbow']" :size="size"/>&nbsp;The Band</RouterLink>
+        <RouterLink to="/music"><font-awesome-icon class="icon" :icon="['fas', 'music']" :size="size"/>&nbsp;Music</RouterLink>
+        <RouterLink to="/gallery"><font-awesome-icon class="icon" :icon="['fas', 'photo-film']" :size="size"/>&nbsp;Gallery</RouterLink>
+        <RouterLink to="/contact"><font-awesome-icon class="icon" :icon="['fas', 'comment-dots']" :size="size"/>&nbsp;Contact</RouterLink>
     </nav>
 </template>
-
 <style scoped>
     nav {
         font-size: 16px;
         text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     nav a.router-link-exact-active {
-        color: var(--color-text);
+        color: yellowgreen;
+        background-color: rgba(153, 205, 50, 0.353);
     }
 
     nav a.router-link-exact-active:hover {
-        background-color: transparent;
+        background-color: rgba(153, 205, 50, 0.353);
+
     }
 
     nav a {
         display: inline-block;
         padding: 0 1rem;
         border-left: 1px solid var(--color-border);
+        display: flex;
+        align-items: center;
+        height: 70%;
     }
 
     nav a:first-of-type {

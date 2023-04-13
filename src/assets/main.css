@@ -13,28 +13,28 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  transition: all .5s;
+  transition: all ease .5s;
   transition-delay: .15s;
 }
 
 .header-scroll{
   background-color: #2f2f2fdd;
   transition: all .5s;
-  transition-delay: .15s;
 }
 
 
 a,
 .green {
   text-decoration: none;
-  color: greenyellow;
+  color: var(--color-text);
   transition: 0.4s;
 }
 
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(160, 100%, 57%, 0.2);
+    color: var(--color-heading);
   }
 }
 #app{
