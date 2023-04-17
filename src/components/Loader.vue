@@ -13,10 +13,11 @@
 </template>
 <style scoped>
   .wrapper {
-  width: 200px;
-  height: 60px;
-  position: relative;
+  width: 100%;
+  position: absolute;
   z-index: 1;
+  min-width: 100%;
+  height: auto;
 }
 
 .circle {

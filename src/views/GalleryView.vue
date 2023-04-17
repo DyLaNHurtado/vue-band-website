@@ -1,30 +1,21 @@
+<script>
+import GallerySection from '../components/GallerySection.vue';
+export default {
+    name: 'GallerySection',
+    data(){
+      return{
+        mediaList:[],
+        
+      }
+    },components:{
+      GallerySection
+    }
+}
+</script>
 <template>
   <div class="gallery">
     <h1 class="title">Gallery</h1>
-    <div class="section-dated">
-      <span class="date minititle">8 marzo 2023</span>
-      <div class="photos">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-      </div>
-    </div>
-    <div class="section-dated">
-      <span class="date minititle">2 marzo 2023</span>
-      <div class="photos">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-        <img src="../assets/logo.svg" alt="">
-      </div>
-    </div>
+    <GallerySection date="" :sectionList="[]" v-for="item in mediaList" />
   </div>
 </template>
 

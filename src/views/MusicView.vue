@@ -1,5 +1,5 @@
 <script>
-import Loader from '../components/Loader.vue'
+import SongCard from '../components/SongCard.vue'
 export default {
     name: 'MusicView',
     data(){
@@ -39,16 +39,9 @@ export default {
       }
     },
     components: {
-      Loader
+      SongCard
     },
     methods: {
-      doEffect(event){
-        if(event.type ==="mouseenter"){
-          event.target.childNodes[0].removeAttribute("style")
-        }else{
-          event.target.childNodes[0].setAttribute("style","filter: grayscale(1);")
-        }
-      }
     },
   }
 </script>
@@ -57,14 +50,7 @@ export default {
     <h1 class="title">Musical repertoire</h1>
     <h2 class="subtitle"> Our Covers </h2>
     <div class="repertorio">
-      <div class="card"  v-for="item in songList" @mouseenter="doEffect($event)"  @mouseleave="doEffect($event)">
-        <Loader/>
-        <img :src="item.img" loading="lazy" class="image"  style="filter:grayscale(1)"  />
-        <div class="info">
-          <h3 class="minititle">{{ item.title }}</h3>
-          <p>{{ item.author }}</p>
-        </div>
-      </div>
+        <SongCard  v-for="item in songList" :img="item.img" :title="item.title" :author="item.author" />
   </div>
   <h2 class="subtitle">Our Own Songs</h2>
   <span>Comming soon...</span>
@@ -87,36 +73,5 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
     transition: all .3s;
-  }
-  .card{
-    transition: all .3s;
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 10px;
-    border:  1px solid var(--vt-c-indigo);
-  }
-
-  .card:hover{
-   scale: 1.1;
-  }
-  .image{
-    max-width: 25vh;
-    min-width: 25vh;
-    height: 20vh;
-    object-fit: cover;
-  }
-  .info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: var(--color-background-mute);
-  }
-  .minititle{
-    font-weight: bold;
-    color:greenyellow;
   }
 </style>

@@ -18,6 +18,11 @@ export default {
           this.isTopOfPage = window.scrollY === 0;
     }
     },
+    methods:{
+      scrollTop(){
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }
+    }
   }
 
 </script>
@@ -33,6 +38,7 @@ export default {
     <span class="minititle">Follow us on:</span>
     <Socials size="3x"/>
   </footer>
+  <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon" id="ig" :icon="['fas', 'arrow-up']" size="xl"/></button>
 </template>
 
 <style scoped>
@@ -45,6 +51,26 @@ export default {
 footer{
   width: 30%;
   padding: 10px;
+}
+.fab{
+  min-height: 4em;
+  min-width: 4em;
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  border-radius: 10px;
+  border:0;
+  background-color: #282828;
+  color: yellowgreen;
+  scale: 1;
+  transition: all .3s;
+}
+.fab:hover{
+  background-color: hsla(160, 100%, 57%, 0.2);
+  color: var(--color-heading);
+}
+.fab:active{
+  scale:1.2;
 }
 
 </style>
