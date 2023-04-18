@@ -38,7 +38,9 @@ export default {
     <span class="minititle">Follow us on:</span>
     <Socials size="3x"/>
   </footer>
-  <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon" id="ig" :icon="['fas', 'arrow-up']" size="xl"/></button>
+  <Transition name="slide-fade">
+    <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon" id="ig" :icon="['fas', 'arrow-up']" size="xl"/></button>
+  </Transition>
 </template>
 
 <style scoped>
@@ -60,7 +62,7 @@ footer{
   bottom: 2em;
   border-radius: 10px;
   border:0;
-  background-color: #282828;
+  background-color: #fafafa;
   color: yellowgreen;
   scale: 1;
   transition: all .3s;
@@ -71,6 +73,20 @@ footer{
 }
 .fab:active{
   scale:1.2;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 
 </style>
