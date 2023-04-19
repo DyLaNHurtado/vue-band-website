@@ -29,8 +29,12 @@ export default {
 
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
+    <i class="nav-btn" @click=""><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></i>
+    <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <NavBar/>
       <Socials size="md"/>
+    </div>
+      
   </header>
 
   <RouterView />
@@ -39,7 +43,7 @@ export default {
     <Socials size="3x"/>
   </footer>
   <Transition name="slide-fade">
-    <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon" id="ig" :icon="['fas', 'arrow-up']" size="xl"/></button>
+    <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
   </Transition>
 </template>
 
@@ -54,6 +58,41 @@ footer{
   width: 30%;
   padding: 10px;
 }
+.nav-content{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.nav-btn{
+
+}
+
+@media screen and (max-width: 1080px) {
+  .open-menu {
+    opacity: 1;
+    height: 100%;
+  }
+  .closed-menu {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+  }
+  .nav-content {
+    flex-direction: column;
+    z-index: 100;
+    position: relative;
+    transition: all 0.2s ease-out;
+  }
+  i {
+    display: block;
+    text-align: right;
+  }
+}
+
 .fab{
   min-height: 4em;
   min-width: 4em;

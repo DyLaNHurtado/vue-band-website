@@ -15,6 +15,7 @@ header {
   z-index: 10;
   transition: all ease .5s;
   transition-delay: .15s;
+  padding: 0 2em;
 }
 
 .header-scroll{
