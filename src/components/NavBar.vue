@@ -42,4 +42,21 @@
     nav a:first-of-type {
         border: 0;
     }
+
+    @media screen and (max-width: 1080px) {
+        nav{
+            flex-direction: column;
+            width: 100%;
+        }
+        nav a{
+            width: 100%;
+            justify-content: center;
+            border:0;
+            border-top: 1px solid var(--color-border);
+            padding: 30px;
+        }
+        nav a:first-of-type {
+        border: 0;
+        }
+    }
 </style>

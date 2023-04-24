@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import Socials from './components/Socials.vue'
+import { setTransitionHooks } from 'vue'
 
 export default {
     name: 'App',
@@ -10,7 +11,8 @@ export default {
     },
     data(){
       return{
-        isTopOfPage:true
+        isTopOfPage:true,
+        showMobileMenu:false,
       }
     },
     beforeMount(){
@@ -21,6 +23,9 @@ export default {
     methods:{
       scrollTop(){
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      },
+      toggleMobileMenu(){
+        this.showMobileMenu= !this.showMobileMenu;
       }
     }
   }
@@ -29,7 +34,7 @@ export default {
 
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
-    <i class="nav-btn" @click=""><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></i>
+    <i class="nav-btn" @click="toggleMobileMenu()"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></i>
     <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
       <NavBar/>
       <Socials size="md"/>
@@ -68,18 +73,30 @@ footer{
 
 }
 .nav-btn{
-
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  padding: 1em;
+  background-color: #3d3d3d
 }
 
 @media screen and (max-width: 1080px) {
+    header{
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
   .open-menu {
     opacity: 1;
     height: 100%;
+    visibility: visible;
   }
   .closed-menu {
     opacity: 0;
+    visibility: hidden;
     height: 0;
     padding: 0;
+    margin: 0;
   }
   .nav-content {
     flex-direction: column;
@@ -87,8 +104,10 @@ footer{
     position: relative;
     transition: all 0.2s ease-out;
   }
-  i {
-    display: block;
+  .nav-btn {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
     text-align: right;
   }
 }
