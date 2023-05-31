@@ -34,11 +34,8 @@ export default {
 
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
-    <i class="nav-btn" @click="toggleMobileMenu()"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></i>
-    <div class="nav-content" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
-      <NavBar/>
-      <Socials size="md"/>
-    </div>
+    <img src="./assets/logo.svg" width="25"/>
+    <span class="">BAND NAME</span>
       
   </header>
 
@@ -49,6 +46,24 @@ export default {
   </footer>
   <Transition name="slide-fade">
     <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
+  </Transition>
+  <button @click="toggleMobileMenu()" class="nav-btn"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></button>
+  <Transition name="slide-fade">
+      <div v-if="showMobileMenu" class="menu">
+        <div class="combo-nav">
+          <div class="name-element">
+            <img src="./assets/logo.svg" width="25"/>
+            <span class="">BAND NAME</span>
+          </div>
+          <footer>
+            <span class="minititle">Follow us on:</span>
+            <Socials size="3x"/>
+          </footer>
+        </div>
+        
+          <NavBar/>
+          
+      </div>
   </Transition>
 </template>
 
@@ -67,51 +82,60 @@ footer{
   width:100%;
   height:100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
+}
+.name-element{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .nav-btn{
-  opacity: 0;
-  height: 0;
-  visibility: hidden;
   padding: 1em;
-  background-color: #3d3d3d
+  background-color: #3d3d3d;
+  z-index: 20;
+  min-height: 4em;
+  min-width: 4em;
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  border-radius: 10px;
+  border:0;
+  color: yellowgreen;
+  scale: 1;
+  transition: all .3s;
 }
 
-@media screen and (max-width: 1080px) {
-    header{
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-  .open-menu {
-    opacity: 1;
-    height: 100%;
-    visibility: visible;
-  }
-  .closed-menu {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    padding: 0;
-    margin: 0;
-  }
-  .nav-content {
-    flex-direction: column;
-    z-index: 100;
-    position: relative;
-    transition: all 0.2s ease-out;
-  }
-  .nav-btn {
-    opacity: 1;
-    visibility: visible;
-    height: auto;
-    text-align: right;
-  }
+.menu{
+  padding: 2em;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #3d3d3d;
+  transition: all .3s;
 }
-
+.combo-nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-right: 2px solid var(--color-border);
+  padding: 1em;
+}
 .fab{
   min-height: 4em;
   min-width: 4em;

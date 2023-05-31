@@ -15,8 +15,9 @@
     nav {
         font-size: 16px;
         text-align: center;
-        height: 100%;
+        width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
@@ -32,31 +33,19 @@
 
     nav a {
         display: inline-block;
-        padding: 0 1rem;
-        border-left: 1px solid var(--color-border);
+        padding: 1rem;
+        border-top: 1px solid var(--color-border);
         display: flex;
         align-items: center;
-        height: 70%;
+        font-size: large;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
     }
 
     nav a:first-of-type {
         border: 0;
     }
 
-    @media screen and (max-width: 1080px) {
-        nav{
-            flex-direction: column;
-            width: 100%;
-        }
-        nav a{
-            width: 100%;
-            justify-content: center;
-            border:0;
-            border-top: 1px solid var(--color-border);
-            padding: 30px;
-        }
-        nav a:first-of-type {
-        border: 0;
-        }
-    }
 </style>
