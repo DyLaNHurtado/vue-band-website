@@ -1,18 +1,16 @@
 <script>
 import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue'
-import Socials from './components/Socials.vue'
-import { setTransitionHooks } from 'vue'
+import NavMenu from './components/NavMenu.vue'
 
 export default {
     name: 'App',
     components: {
-      NavBar,Socials
+      NavMenu
     },
     data(){
       return{
         isTopOfPage:true,
-        showMobileMenu:false,
+        showNavMenu:false,
       }
     },
     beforeMount(){
@@ -24,8 +22,8 @@ export default {
       scrollTop(){
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       },
-      toggleMobileMenu(){
-        this.showMobileMenu= !this.showMobileMenu;
+      toogleNavMenu(){
+        this.showNavMenu= !this.showNavMenu;
       }
     }
   }
@@ -34,37 +32,20 @@ export default {
 
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
-    <img src="./assets/logo.svg" width="25"/>
-    <span class="">BAND NAME</span>
-      
+    <span class="subtitle">BAND NAME</span>
   </header>
-
   <RouterView />
-  <footer>
-    <span class="minititle">Follow us on:</span>
-    <Socials size="3x"/>
-  </footer>
   <Transition name="slide-fade">
     <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
   </Transition>
-  <button @click="toggleMobileMenu()" class="nav-btn"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></button>
+  <button @click="toogleNavMenu()" class="nav-btn"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></button>
   <Transition name="slide-fade">
-      <div v-if="showMobileMenu" class="menu">
-        <div class="combo-nav">
-          <div class="name-element">
-            <img src="./assets/logo.svg" width="25"/>
-            <span class="">BAND NAME</span>
-          </div>
-          <footer>
-            <span class="minititle">Follow us on:</span>
-            <Socials size="3x"/>
-          </footer>
-        </div>
-        
-          <NavBar/>
-          
-      </div>
+      <NavMenu v-if="showNavMenu" @closeNavMenu="toogleNavMenu()"/>
   </Transition>
+  <footer>
+    <Socials size="3x"/>
+  </footer>
+
 </template>
 
 <style scoped>
@@ -86,14 +67,6 @@ footer{
   align-items: center;
   justify-content: space-around;
 }
-.name-element{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .nav-btn{
   padding: 1em;
   background-color: #3d3d3d;
@@ -101,7 +74,7 @@ footer{
   min-height: 4em;
   min-width: 4em;
   position: fixed;
-  left: 1em;
+  right: 1em;
   top: 1em;
   border-radius: 10px;
   border:0;
@@ -110,32 +83,6 @@ footer{
   transition: all .3s;
 }
 
-.menu{
-  padding: 2em;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #3d3d3d;
-  transition: all .3s;
-}
-.combo-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  border-right: 2px solid var(--color-border);
-  padding: 1em;
-}
 .fab{
   min-height: 4em;
   min-width: 4em;

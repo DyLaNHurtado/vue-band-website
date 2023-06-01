@@ -54,7 +54,6 @@ a,
 .subtitle{
   font-size: 32px ;
   font-weight: 600;
-  margin-bottom: 10px;
   text-align: center;
   width: 100%;
   display: block;
@@ -62,7 +61,6 @@ a,
 .minititle{
   font-size: 16px;
   font-weight: 400;
-  margin-bottom: 10px;
   text-align: center;
   width: 100%;
   display: block;

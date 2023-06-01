@@ -8,14 +8,15 @@ export default {
 </script>
 
 <template>
-  <div class="socials">
-    <font-awesome-icon class="icon" id="twitter" :icon="['fab', 'twitter']" :size="size"/>
-    <font-awesome-icon class="icon" id="fb" :icon="['fab', 'facebook']"  :size="size"/>
-    <font-awesome-icon class="icon" id="soundcloud" :icon="['fab', 'soundcloud']" :size="size"/>
-    <font-awesome-icon class="icon" id="spotify" :icon="['fab', 'spotify']"  :size="size"/>
-    <font-awesome-icon class="icon" id="yt" :icon="['fab', 'youtube']" :size="size"/>
-    <font-awesome-icon class="icon" id="ig" :icon="['fab', 'instagram']" :size="size"/>
-  </div>
+    <span class="minititle">Follow us on:</span>
+    <div class="socials">
+        <font-awesome-icon class="icon" id="twitter" :icon="['fab', 'twitter']" :size="size"/>
+        <font-awesome-icon class="icon" id="fb" :icon="['fab', 'facebook']"  :size="size"/>
+        <font-awesome-icon class="icon" id="soundcloud" :icon="['fab', 'soundcloud']" :size="size"/>
+        <font-awesome-icon class="icon" id="spotify" :icon="['fab', 'spotify']"  :size="size"/>
+        <font-awesome-icon class="icon" id="yt" :icon="['fab', 'youtube']" :size="size"/>
+        <font-awesome-icon class="icon" id="ig" :icon="['fab', 'instagram']" :size="size"/>
+    </div>
 
 </template>
 <style scoped>
