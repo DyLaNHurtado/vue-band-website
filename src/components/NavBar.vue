@@ -24,7 +24,7 @@ export default {
         text-align: center;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         padding: 1em;
     }
@@ -42,7 +42,7 @@ export default {
     nav a {
         display: inline-block;
         padding: 1rem;
-        border-top: 1px solid var(--color-border);
+        border-left: 1px solid var(--color-border);
         display: flex;
         align-items: center;
         font-size: large;
@@ -54,6 +54,43 @@ export default {
 
     nav a:first-of-type {
         border: 0;
+    }
+
+    @media screen and (max-width: 1080px) {
+        nav {
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
+
+        nav a.router-link-exact-active {
+            color: yellowgreen;
+            background-color: rgba(153, 205, 50, 0.353);
+        }
+
+        nav a.router-link-exact-active:hover {
+            background-color: rgba(153, 205, 50, 0.353);
+
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 1rem;
+            border-top: 1px solid var(--color-border);
+            border-left: 0;
+            display: flex;
+            align-items: center;
+            font-size: large;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
     }
 
 </style>

@@ -1,48 +1,61 @@
-<script setup>
+<script>
 import New from './New.vue'
+export default {
+    name: 'LastNews',
+    data(){
+      return {
+        newsList:[
+          {
+            title:"sdfsdfgsdjkgdf",
+            description:"asjfhdjasdfhkajsdhfjklahdsfjkhasdkjfahsdjkfahsjkldfhajdkshfakjsdfhajsdhfajksdlhfaskjdfhalkdfhaksdfhafdasdfasd",
+            img:"/src/assets/logo.svg",
+          },
+          {
+            title:"sdfsdfgsdjkgdf",
+            description:"asjfhdjasdfhkajsdhfjklahdsfjkhasdkjfahsdjkfahsjkldfhajdkshfakjsdfhajsdhfajksdlhfaskjdfhalkdfhaksdfhafdasdfasd",
+            img:"/src/assets/logo.svg",
+          },
+          {
+            title:"sdfsdfgsdjkgdf",
+            description:"asjfhdjasdfhkajsdhfjklahdsfjkhasdkjfahsdjkfahsjkldfhajdkshfakjsdfhajsdhfajksdlhfaskjdfhalkdfhaksdfhafdasdfasd",
+            img:"/src/assets/logo.svg",
+          },
+        ]
+      }
+    },
+    components:{
+      New
+    }
+  }
 </script>
 
 <template>
-  <div id="last-news">
     <span class="subtitle">Last news</span>
-    <div class="grid">
-      <New/>
-      <New/>
-      <New/>
-      <New/>
-      <New/>
-      <New/>
+    <div class="news">
+      <New v-for="item in newsList" :img="item.img" :title="item.title" :description="item.description" />
     </div>
-  </div>
-
 </template>
 <style scoped>
   #last-news{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
-    height: 100%;
     background-color: black;
-    padding: 20px 0;
+    width: 100%;
+    padding: 20px;
+    
   }
   img{
     width: 200px;
     height: 200px;
   }
-  .grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-  @media only screen and (max-width: 1300px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  }
-  @media only screen and (max-width: 850px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  .news{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 24px;
+    transition: all .3s;
   }
 </style>

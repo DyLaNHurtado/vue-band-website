@@ -28,30 +28,71 @@ export default {
 </template>
 
 <style scoped>
-.menu{
-  padding: 2em;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #3d3d3d;
-  transition: all .3s;
+
+    .menu{
+        opacity: 0;
+        height: 0;
+        display: none;
+        transition: all .3s;
+        padding: 2em;
+        z-index: 10;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #3d3d3d;
+
+    }
+    .combo-nav{
+        opacity: 0;
+        height: 0;
+        display: none;
+        transition: all .3s;
+        padding: 1em;
+        width: 100%;
+
+    }
+    @media screen and (max-width: 800px) {
+    .menu{
+        opacity: 1;
+        height: 100%;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .combo-nav{
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        border-bottom: 2px solid var(--color-border);
+    }
 }
-.combo-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  border-right: 2px solid var(--color-border);
-  padding: 1em;
+
+    @media (min-width: 800px) and (max-width: 1080px) {
+    .menu{
+        opacity: 1;
+        height: 100%;
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .combo-nav{
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        border-right: 2px solid var(--color-border);
+    }
+ 
 }
+
 </style>

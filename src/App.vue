@@ -1,11 +1,12 @@
 <script>
 import { RouterView } from 'vue-router'
 import NavMenu from './components/NavMenu.vue'
+import NavBar from './components/NavBar.vue'
 
 export default {
     name: 'App',
     components: {
-      NavMenu
+      NavMenu,NavBar
     },
     data(){
       return{
@@ -33,6 +34,7 @@ export default {
 <template>
   <header :class="{'header-scroll' : !isTopOfPage}">
     <span class="subtitle">BAND NAME</span>
+    <NavBar class="header-navbar" />
   </header>
   <RouterView />
   <Transition name="slide-fade">
@@ -50,6 +52,11 @@ export default {
 
 <style scoped>
 
+.header-navbar{
+    opacity: 1;
+    height: 100%;
+    display: flex;
+  }
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -68,19 +75,8 @@ footer{
   justify-content: space-around;
 }
 .nav-btn{
-  padding: 1em;
-  background-color: #3d3d3d;
-  z-index: 20;
-  min-height: 4em;
-  min-width: 4em;
-  position: fixed;
-  right: 1em;
-  top: 1em;
-  border-radius: 10px;
-  border:0;
-  color: yellowgreen;
-  scale: 1;
-  transition: all .3s;
+  display: 0;
+  height: 0;
 }
 
 .fab{
@@ -116,6 +112,30 @@ footer{
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+@media screen and (max-width: 1080px) {
+  .header-navbar{
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+  .nav-btn{
+    padding: 1em;
+    background-color: #3d3d3d;
+    z-index: 20;
+    min-height: 4em;
+    min-width: 4em;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    border-radius: 10px;
+    border:0;
+    color: yellowgreen;
+    scale: 1;
+    transition: all .3s;
+    display: 1;
+  }
 }
 
 </style>

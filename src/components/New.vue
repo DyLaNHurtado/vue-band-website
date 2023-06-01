@@ -1,14 +1,20 @@
-<script setup>
+<script>
+export default {
+    name: 'New',
+    props:{img:'',title:'',description:''},
+    data(){
+      return {
+      }
+    },
+  }
 </script>
 
 <template>
-  <div class="new">
-    <div class="small-info">
-        <span class="date">4 de Marzo 2023</span>
-        <span class="authors">ssdfdf</span>
-    </div>
-    <div class="data">
-        <span class="minititle">sdffssdfsfdsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdfsdf</span>
+  <div class="new" :style="{ backgroundImage: `url('${img}')` }">
+    <div class="data-info" >
+      <p class="minititle">{{ title }}</p>
+      <p class="description">{{ description }}</p>
+      <p class="date">04 / 12 / 2023</p>
     </div>
   </div>
 
@@ -17,40 +23,52 @@
   .new{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
-    padding: 1rem;
-    background-color: gray;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 40em;
+    background-color:#f2f2f2;
     cursor: pointer;
+    transition: all .3s;
+    background-repeat: no-repeat; background-size: contain;
   }
-
-  .small-info{
+  .new:hover .data-info{
+    height: 100%
+  }
+  .new:hover .data-info .description {
+      opacity: 1;
+      display: block;
+      height: 100%;
+  }
+  .description{
+    opacity: 0;
+    height: 0;
+    width: 100%;
+    transition: all .3s;
+  }
+  .data-info{
     display: flex;
     flex-direction: column;
-    align-self: start;
-    justify-self: start;
-    font-size: .8rem;
+    align-items: start;
+    justify-content: space-around;
     width: 100%;
+    height: 45%;
+    background-color: gray;
+    padding: 1rem;
+    transition: all .3s;
   }
-  .data{
-    width:100%;
-  }
+
   .minititle{
     display: block;
     width: 100%;
-    height: 100%;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: large;
     font-weight: bold;
     text-align: center;
     transition: all .3s;
     background-color: transparent;
     border-bottom: 1px solid transparent;
     
-  }
-  .new:hover .data .minititle{
-    color: greenyellow;
-    border-bottom: 1px solid #f2f2f2;
   }
 
 </style>
