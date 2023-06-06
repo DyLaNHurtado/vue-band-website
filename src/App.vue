@@ -2,11 +2,12 @@
 import { RouterView } from 'vue-router'
 import NavMenu from './components/NavMenu.vue'
 import NavBar from './components/NavBar.vue'
+import Socials from './components/Socials.vue'
 
 export default {
     name: 'App',
     components: {
-      NavMenu,NavBar
+      NavMenu,NavBar,Socials
     },
     data(){
       return{
@@ -81,6 +82,7 @@ footer{
 .nav-btn{
   display: 0;
   height: 0;
+  opacity: 0;
 }
 
 .fab{

@@ -2,33 +2,42 @@
 import Welcome from '../components/Welcome.vue'
 import LastNews from '../components/LastNews.vue'
 import InfoRef from '../components/InfoRef.vue'
+import ShapeDivider from '../components/ShapeDivider.vue'
 </script>
 
 <template>
   <main>
     <Welcome id="welcome"/>
     <div class="container">
-      <InfoRef title="Do you want to know more about us ?" 
+      <InfoRef
       text="We tell you from general information to the most shocking and funny anecdotes. You will be able to know better how the members work, their likes, concerns..."
       textButton="Let's meet better!"/>
     </div>
     <div class="container">
       <LastNews/>
+      <div class="container">
+        <InfoRef
+        text="In the gallery you will find photos of all our important moments and video-compilations of the best moments"
+        textButton="See more!"/>
+      </div>
+      <ShapeDivider/>
     </div>
     <div class="container">
-      <InfoRef title="Look out the gallery" 
+      <ShapeDivider/>
+      <InfoRef 
       text="In the gallery you will find photos of all our important moments and video-compilations of the best moments"
       textButton="Go to gallery!"/>
     </div>
     <div class="container">
-      <InfoRef title="What music play?" 
+      <InfoRef 
       text="Currently, we mix up the covers with own songs. We have a repertoire of songs that`s we know play."
       textButton="Check it out!"/>
     </div>
     <div class="container">
-      <InfoRef title="Have any question or proposal ?" 
+      <InfoRef
       text="The band is hardworking daily to offer a good show. The band wants to people feel good vibes and desire to dance and sing."
       textButton="Contact now!"/>
+      <ShapeDivider/>
     </div>
   </main>
 </template>
