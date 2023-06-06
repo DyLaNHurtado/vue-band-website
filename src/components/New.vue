@@ -25,7 +25,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    min-height: 40em;
+    min-height: 35em;
+    max-width: 25em;
     background-color:#f2f2f2;
     cursor: pointer;
     transition: all .3s;
@@ -43,15 +44,16 @@ export default {
     opacity: 0;
     height: 0;
     width: 100%;
+    word-break: break-word;
     transition: all .3s;
   }
   .data-info{
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
-    height: 45%;
+    height: 30%;
     background-color: gray;
     padding: 1rem;
     transition: all .3s;

@@ -40,7 +40,11 @@ export default {
   <Transition name="slide-fade">
     <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
   </Transition>
-  <button @click="toogleNavMenu()" class="nav-btn"><font-awesome-icon class="icon" :icon="['fas', 'bars']" size="xl"/></button>
+  <button @click="toogleNavMenu()" class="nav-btn" :class="{'nav-menu-btn':showNavMenu}">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
   <Transition name="slide-fade">
       <NavMenu v-if="showNavMenu" @closeNavMenu="toogleNavMenu()"/>
   </Transition>
@@ -56,7 +60,7 @@ export default {
     opacity: 1;
     height: 100%;
     display: flex;
-  }
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -121,20 +125,41 @@ footer{
     display: none;
   }
   .nav-btn{
-    padding: 1em;
-    background-color: #3d3d3d;
+    background-color: transparent;
     z-index: 20;
-    min-height: 4em;
-    min-width: 4em;
+    min-height: 3em;
+    min-width: 3em;
+    gap: .55rem;
     position: fixed;
-    right: 1em;
-    top: 1em;
+    right: 1.35em;
+    top: 1.35em;
     border-radius: 10px;
     border:0;
     color: yellowgreen;
     scale: 1;
     transition: all .3s;
-    display: 1;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-btn > div{
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .3s;
+    transform-origin: left;
+  }
+  .nav-menu-btn div:first-child{
+    transform: rotate(45deg);
+  }
+  .nav-menu-btn div:nth-child(2){
+    opacity: 0;
+  }
+  .nav-menu-btn div:last-child{
+    transform: rotate(-45deg);
   }
 }
 

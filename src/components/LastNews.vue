@@ -36,26 +36,11 @@ export default {
     </div>
 </template>
 <style scoped>
-  #last-news{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    background-color: black;
-    width: 100%;
-    padding: 20px;
-    
-  }
-  img{
-    width: 200px;
-    height: 200px;
-  }
   .news{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     transition: all .3s;
+    gap: 2em;
   }
 </style>
