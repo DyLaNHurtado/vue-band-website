@@ -8,12 +8,12 @@ import ShapeDivider from '../components/ShapeDivider.vue'
 <template>
   <main>
     <Welcome id="welcome"/>
-    <div class="container">
+    <div class="container fade-in">
       <InfoRef
       text="We tell you from general information to the most shocking and funny anecdotes. You will be able to know better how the members work, their likes, concerns..."
       textButton="Let's meet better!"/>
     </div>
-    <div class="container">
+    <div class="container fade-in">
       <LastNews/>
       <div class="container">
         <InfoRef
@@ -22,18 +22,18 @@ import ShapeDivider from '../components/ShapeDivider.vue'
       </div>
       <ShapeDivider/>
     </div>
-    <div class="container">
+    <div class="container fade-in">
       <ShapeDivider/>
       <InfoRef 
       text="In the gallery you will find photos of all our important moments and video-compilations of the best moments"
       textButton="Go to gallery!"/>
     </div>
-    <div class="container">
+    <div class="container fade-in">
       <InfoRef 
       text="Currently, we mix up the covers with own songs. We have a repertoire of songs that`s we know play."
       textButton="Check it out!"/>
     </div>
-    <div class="container">
+    <div class="container fade-in">
       <InfoRef
       text="The band is hardworking daily to offer a good show. The band wants to people feel good vibes and desire to dance and sing."
       textButton="Contact now!"/>

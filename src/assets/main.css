@@ -85,3 +85,10 @@ a,
   color: white;
   box-shadow: inset 340px 0 0 0 red;
 }
+
+.fade-in {
+  opacity: 0;
+  transition: 0.3s all ease-out;
+  transform: scale(0.8);
+  display: inline-block;
+}

@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import NavMenu from './components/NavMenu.vue'
 import NavBar from './components/NavBar.vue'
-import Socials from './components/Socials.vue'
+import Socials from './components/NavBar.vue'
 
 export default {
     name: 'App',
@@ -13,7 +13,17 @@ export default {
       return{
         isTopOfPage:true,
         showNavMenu:false,
+        fadeInElements:[]
       }
+    },
+    beforeUpdate(){
+      this.fadeInElements = Array.from(document.getElementsByClassName('fade-in'));
+      document.addEventListener('scroll', this.handleScroll);
+      this.handleScroll();
+    },
+    
+    unmounted(){
+      document.removeEventListener('scroll', this.handleScroll)
     },
     beforeMount(){
       onscroll = (event)=>{
@@ -26,7 +36,25 @@ export default {
       },
       toogleNavMenu(){
         this.showNavMenu= !this.showNavMenu;
-      }
+      },
+      handleScroll(){
+        console.log(this.fadeInElements);
+        this.fadeInElements.forEach((item, index) => {
+          console.log(item);
+          if (this.isElemVisible(item)) {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+            this.fadeInElements.splice(index, 1);
+            }
+        });
+      },
+      isElemVisible(element){
+          const buffer = 200;
+          const rect = element.getBoundingClientRect();
+          const elemTop = rect.top + buffer;
+          const elemBottom = rect.bottom;
+          return elemTop < window.innerHeight && elemBottom >= 0;
+      },
     }
   }
 
