@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import NavMenu from './components/NavMenu.vue'
 import NavBar from './components/NavBar.vue'
-import Socials from './components/NavBar.vue'
+import Socials from './components/Socials.vue'
 
 export default {
     name: 'App',
@@ -78,7 +78,9 @@ export default {
       <NavMenu v-if="showNavMenu" @closeNavMenu="toogleNavMenu()"/>
   </Transition>
   <footer>
-    <Socials size="3x"/>
+    <div class="footer-container">
+      <Socials size="3x"/>
+    </div>
   </footer>
 
 </template>
@@ -96,6 +98,12 @@ export default {
 }
 
 footer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-container{
   width: 30%;
   padding: 10px;
 }
@@ -124,6 +132,7 @@ footer{
   background-color: #fafafa;
   color: yellowgreen;
   scale: 1;
+  z-index: 99;
   transition: all .3s;
 }
 .fab:hover{

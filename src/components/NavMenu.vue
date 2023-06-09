@@ -23,7 +23,7 @@ export default {
             <Socials size="3x"/>
           </footer>
         </div>
-        <NavBar @navClicked="closeNavMenu()"/>
+        <NavBar class="navbar-menu" @navClicked="closeNavMenu()"/>
     </div>
 </template>
 

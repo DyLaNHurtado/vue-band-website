@@ -12,7 +12,7 @@ export default {
 <template>
     <nav>
         <RouterLink to="/" @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'home']" :size="size"/>&nbsp;Home</RouterLink>
-        <RouterLink to="/band"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'rainbow']" :size="size"/>&nbsp;The Band</RouterLink>
+        <RouterLink to="/biography"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'rainbow']" :size="size"/>&nbsp;Biography</RouterLink>
         <RouterLink to="/music"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'music']" :size="size"/>&nbsp;Music</RouterLink>
         <RouterLink to="/gallery"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'photo-film']" :size="size"/>&nbsp;Gallery</RouterLink>
         <RouterLink to="/contact"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'comment-dots']" :size="size"/>&nbsp;Contact</RouterLink>
