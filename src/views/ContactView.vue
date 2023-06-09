@@ -32,7 +32,7 @@
     justify-content: center;
     width: 50%;
     margin-top: 25px;
-    padding: 50px 30px;
+    padding: 40px 20px;
     background-color: #56565656;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
@@ -49,7 +49,7 @@
     max-height: 100%;
     width: 100%;
     height: 200px;
-    margin: 20px;
+    margin: 10px;
     overflow-y: auto;
     border: 2px solid #4f4f4f;
     box-shadow: none;
@@ -70,7 +70,7 @@
     max-width: 100%;
     max-height: 100%;
     width: 100%;
-    margin: 20px;
+    margin: 10px;
     border: 2px solid #4f4f4f;
     box-shadow: none;
     background-color: #4f4f4f56;

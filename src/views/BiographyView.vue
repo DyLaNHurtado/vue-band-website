@@ -24,6 +24,7 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 100%;
+    padding: 20px;
     padding-top: 5rem;
   }
 

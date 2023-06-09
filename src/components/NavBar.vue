@@ -4,6 +4,8 @@ export default {
     methods:{
         navClicked(){
             this.$emit('navClicked');
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+
         }
     }
   }
@@ -12,9 +14,9 @@ export default {
 <template>
     <nav>
         <RouterLink to="/" @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'home']" :size="size"/>&nbsp;Home</RouterLink>
-        <RouterLink to="/biography"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'rainbow']" :size="size"/>&nbsp;Biography</RouterLink>
-        <RouterLink to="/music"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'music']" :size="size"/>&nbsp;Music</RouterLink>
-        <RouterLink to="/gallery"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'photo-film']" :size="size"/>&nbsp;Gallery</RouterLink>
+        <RouterLink to="/biography"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'book-open']" :size="size"/>&nbsp;Biography</RouterLink>
+        <RouterLink to="/discography"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'music']" :size="size"/>&nbsp;Discography</RouterLink>
+        <RouterLink to="/gallery"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'images']" :size="size"/>&nbsp;Gallery</RouterLink>
         <RouterLink to="/contact"  @click="navClicked()"><font-awesome-icon class="icon" :icon="['fas', 'comment-dots']" :size="size"/>&nbsp;Contact</RouterLink>
     </nav>
 </template>

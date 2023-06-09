@@ -67,7 +67,7 @@ export default {
   </header>
   <RouterView />
   <Transition name="slide-fade">
-    <button v-if="!isTopOfPage" @click="scrollTop" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
+    <button v-if="!isTopOfPage" @click="scrollTop()" class="fab"><font-awesome-icon class="icon"  :icon="['fas', 'arrow-up']" size="xl"/></button>
   </Transition>
   <button @click="toogleNavMenu()" class="nav-btn" :class="{'nav-menu-btn':showNavMenu}">
     <div></div>

@@ -15,7 +15,10 @@ export default {
 <template>
   <div class="gallery">
     <h1 class="title">Gallery</h1>
-    <GallerySection date="" :sectionList="[]" v-for="item in mediaList" />
+    <div class="container">
+      
+    </div>
+    <!-- <GallerySection date="" :sectionList="[]" v-for="item in mediaList" /> -->
   </div>
 </template>
 
@@ -28,6 +31,14 @@ export default {
     width: 100%;
     padding: 20px;
     padding-top: 5rem;
+  }
+  .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
   }
   .section-dated{
     width: 100%;
