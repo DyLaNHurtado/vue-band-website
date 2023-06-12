@@ -1,4 +1,5 @@
 <script>
+import {galleryRef} from '../firebase'
 import GallerySection from '../components/GallerySection.vue';
 export default {
     name: 'GalleryView',
@@ -31,6 +32,11 @@ export default {
       }
     },components:{
       GallerySection
+    },mounted(){
+      console.log(this.mediaList);
+      console.log(galleryRef.data.value);
+      this.mediaList = galleryRef.value;
+      console.log(this.mediaList);
     }
 }
 </script>
