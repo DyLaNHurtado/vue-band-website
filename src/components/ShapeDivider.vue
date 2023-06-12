@@ -21,7 +21,7 @@ export default {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: -10;
+    z-index: -2;
     transform: rotate(180deg);
 }
 

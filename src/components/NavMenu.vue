@@ -4,6 +4,12 @@ import Socials from './Socials.vue'
 import LogoAndName from './LogoAndName.vue'
 export default {
     name: 'NavMenu',
+    mounted(){
+        setTimeout(()=>{
+          const menu = document.getElementsByClassName("menu")[0];
+          if(menu){ menu.focus(); }
+        });
+    },
     methods:{
         closeNavMenu(){
             this.$emit('closeNavMenu');
@@ -16,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="menu">
+    <div class="menu"  tabindex="0" @keydown.esc="closeNavMenu()">
         <div class="combo-nav">
           <LogoAndName name="BAND NAME" img="/src/assets/logo.svg" :isColumn="true" />
           <footer>
@@ -35,7 +41,7 @@ export default {
         display: none;
         transition: all .3s;
         padding: 2em;
-        z-index: 10;
+        z-index: 5;
         width: 100%;
         position: fixed;
         top: 0;

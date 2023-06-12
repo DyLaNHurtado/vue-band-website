@@ -29,40 +29,22 @@ export default {
 
 <template>
   <div class="img-container" @click="openDisplay()">
-    <img v-show="!isLoading" class="img" :src="url" @loadstart="isLoading=true" @load="isLoading=false" 
+    <img v-if="!isVideo" v-show="!isLoading" class="img" :src="url" @loadstart="isLoading=true" @load="isLoading=false" 
         loading="lazy" @error="this.style.display='none'" />
-        <!-- <video class="video" muted loop autoplay controls src="../assets/logo.svg"></video> -->
-        <Loader id="loader" v-if="isLoading"/>
-        <font-awesome-icon id="hover-icon" v-if="!isLoading" :icon="['fas', 'magnifying-glass-plus']"  size="l"/>
+    <video v-else class="video" muted loop autoplay :src="url"></video>
+    <Loader id="loader" v-if="isLoading && !isVideo"/>
   </div>
 
-  <div class="item-display" v-if="isDisplay" tabindex="0" @keydown.esc="isDisplay=false">
+  <div class="item-display" @click="isDisplay=false" v-if="isDisplay" tabindex="0" @keydown.esc="isDisplay=false">
     <font-awesome-icon @click="isDisplay=false" :icon="['fas', 'xmark']" id="close-icon" size="3x"/>
-    <!-- <img v-if="!isVideo" :src="url" loading="lazy" @error="this.style.display='none'" /> -->
-    <video class="video-display" autoplay controls src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"></video>
+    <img v-if="!isVideo" class="img-display" :src="url" loading="lazy" @error="this.style.display='none'" />
+    <video v-else class="video-display" autoplay controls :src="url"></video>
   </div>
 </template>
 <style scoped>
   #loader{
     min-height: 100%;
     min-width: 100%;
-  }
-
-  #hover-icon{
-    min-height: 20%;
-    min-width: 20%;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    opacity: 0;
-    transition: all .3s;
-  }
-  .img-container:hover #hover-icon{
-    opacity: 1;
   }
 
   .img-container {
@@ -87,22 +69,24 @@ export default {
     height: 100%;
     object-fit: cover;
   }
-  .video-display{
+  .video-display, .img-display{
     max-width: 90vw;
   }
   .item-display{
     min-width: 100%;
     min-height: 100%;
+    overflow: hidden;
     position: fixed;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 99;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
     backdrop-filter: blur(10px);
   }
 
@@ -110,6 +94,11 @@ export default {
     position: fixed;
     top: 1em;
     right: 1em;
+    opacity: 1;
+    transition: all .1s;
+  }
+  #close-icon:hover{
+    opacity: .5;
   }
 
   @media screen and (max-width: 500px) {

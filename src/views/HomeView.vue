@@ -1,8 +1,31 @@
-<script setup>
+<script>
 import Welcome from '../components/Welcome.vue'
 import LastNews from '../components/LastNews.vue'
+import GallerySection from '../components/GallerySection.vue'
 import InfoRef from '../components/InfoRef.vue'
 import ShapeDivider from '../components/ShapeDivider.vue'
+export default {
+    name: 'HomeView',
+    data(){
+      return{
+        mediaList:[{
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },
+      {
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },
+      {
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      }]
+      }
+    },
+    components: {
+      Welcome, LastNews, GallerySection, InfoRef, ShapeDivider
+    },
+  }
 </script>
 
 <template>
@@ -22,11 +45,14 @@ import ShapeDivider from '../components/ShapeDivider.vue'
       </div>
       <ShapeDivider/>
     </div>
-    <div class="container fade-in">
+    <span class="subtitle">Photos & Videos</span>
+      <GallerySection class="fade-in" :mediaList="mediaList"/>
+      <div class="container">
+        <InfoRef class="fade-in"
+        text="In the gallery you will find photos of all our important moments and video-compilations of the best moments"
+        textButton="See more!"/>
       <ShapeDivider/>
-      <InfoRef 
-      text="In the gallery you will find photos of all our important moments and video-compilations of the best moments"
-      textButton="Go to gallery!"/>
+
     </div>
     <div class="container fade-in">
       <InfoRef 

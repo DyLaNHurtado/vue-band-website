@@ -1,29 +1,43 @@
 <script>
-import GalleryItem from '../components/GalleryItem.vue';
+import GallerySection from '../components/GallerySection.vue';
 export default {
     name: 'GalleryView',
     data(){
       return{
-        mediaList:[],
-        
+        mediaList:[{
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },
+      {
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },
+      {
+        url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+        isVideo:true
+      },
+      {
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },
+      {
+        url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+        isVideo:true
+      },
+      {
+        url: "https://picsum.photos/700/600",
+        isVideo:false
+      },],
       }
     },components:{
-      GalleryItem
+      GallerySection
     }
 }
 </script>
 <template>
   <div class="gallery">
     <h1 class="title">Gallery</h1>
-    <div class="container">
-      <GalleryItem url="https://picsum.photos/700/600"/>
-      <GalleryItem url="https://picsum.photos/700/600"/>
-      <GalleryItem url="https://picsum.photos/700/600"/>
-      <GalleryItem url="https://picsum.photos/700/600"/>
-      <GalleryItem url="https://picsum.photos/700/600"/>
-      <GalleryItem url="https://picsum.photos/700/600"/>
-    </div>
-    <!-- <GallerySection date="" :sectionList="[]" v-for="item in mediaList" /> -->
+    <GallerySection :mediaList="mediaList" />
   </div>
 </template>
 
@@ -37,19 +51,4 @@ export default {
     padding: 20px;
     padding-top: 5rem;
   }
-  .container{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 15px auto;
-    width: 80%;
-  }
-
-@media screen and (max-width: 500px) {
-  .container{
-    margin: 0;
-    width: 100%;
-  }
-}
 </style>

@@ -43,7 +43,6 @@ export default {
           console.log(item);
           if (this.isElemVisible(item)) {
             item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
             this.fadeInElements.splice(index, 1);
             }
         });
@@ -132,7 +131,7 @@ footer{
   background-color: #fafafa;
   color: yellowgreen;
   scale: 1;
-  z-index: 99;
+  z-index: 2;
   transition: all .3s;
 }
 .fab:hover{
@@ -165,7 +164,7 @@ footer{
   }
   .nav-btn{
     background-color: transparent;
-    z-index: 20;
+    z-index: 10;
     min-height: 3em;
     min-width: 3em;
     gap: .55rem;
