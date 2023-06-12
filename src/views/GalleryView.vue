@@ -1,14 +1,14 @@
 <script>
-import GallerySection from '../components/GallerySection.vue';
+import GalleryItem from '../components/GalleryItem.vue';
 export default {
-    name: 'GallerySection',
+    name: 'GalleryView',
     data(){
       return{
         mediaList:[],
         
       }
     },components:{
-      GallerySection
+      GalleryItem
     }
 }
 </script>
@@ -16,7 +16,12 @@ export default {
   <div class="gallery">
     <h1 class="title">Gallery</h1>
     <div class="container">
-      
+      <GalleryItem url="https://picsum.photos/700/600"/>
+      <GalleryItem url="https://picsum.photos/700/600"/>
+      <GalleryItem url="https://picsum.photos/700/600"/>
+      <GalleryItem url="https://picsum.photos/700/600"/>
+      <GalleryItem url="https://picsum.photos/700/600"/>
+      <GalleryItem url="https://picsum.photos/700/600"/>
     </div>
     <!-- <GallerySection date="" :sectionList="[]" v-for="item in mediaList" /> -->
   </div>
@@ -26,43 +31,25 @@ export default {
   .gallery {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     padding: 20px;
     padding-top: 5rem;
   }
   .container{
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    
-  }
-  .section-dated{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  img{
-    filter: grayscale(100);
-    transition: all .3s;
-    cursor: pointer;
-    width: 100%;
-    background-color: aquamarine;
+    margin: 15px auto;
+    width: 80%;
   }
 
-  img:hover{
-    filter: grayscale(0);
-  }
-
-  .photos{
+@media screen and (max-width: 500px) {
+  .container{
+    margin: 0;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: .3rem;
   }
+}
 </style>
